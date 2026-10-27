@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои задачи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Анимированный фон -->
+    <div class="bg-animation">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="circle circle-4"></div>
+    </div>
+
+    <button id="theme-btn" title="Сменить тему">🌙</button>
+
+    <div class="container">
+        <h1>
+            <span class="logo">📝</span> Мои задачи
+        </h1>
+
+        <!-- Прогресс бар -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Что нужно сделать?" required>
+            
+            <div class="form-options">
+                <select id="task-category">
+                    <option value="none">Авто-категория 🤖</option>
+                    <option value="study">Учеба</option>
+                    <option value="work">Работа</option>
+                    <option value="home">Дом</option>
+                </select>
+
+                <input type="date" id="task-date" title="Срок выполнения">
+
+                <label class="important-label">
+                    <input type="checkbox" id="task-important">
+                    Важная
+                </label>
+            </div>
+
+            <button type="submit">Добавить</button>
+        </form>
+
+        <!-- Поиск -->
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="🔍 Поиск по задачам или категориям...">
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="active">Активные</button>
+            <button class="filter-btn" data-filter="done">Выполненные</button>
+        </div>
+
+        <ul id="task-list"></ul>
+        
+        <button id="clear-btn" style="display: none;">Очистить выполненные</button>
+
+        <p id="counter">Всего задач: 0</p>
+        <p id="active-counter">Активных задач: 0</p>
+
+        <div class="export-import">
+            <button id="export-btn" title="Скачать задачи в файл">📥 Экспорт</button>
+            <label class="import-btn" title="Загрузить задачи из файла">
+                📤 Импорт
+                <input type="file" id="import-input" accept=".json" style="display: none;">
+            </label>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
